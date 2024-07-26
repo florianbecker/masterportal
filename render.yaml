@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: masterportal
+    env: docker
+    region: frankfurt
+    healthCheckPath: /
+    plan: starter
+
+  - type: pserv
+    name: tinyows
+    env: docker
+    repo: https://github.com/technologiestiftung/tinyows.git
+    plan: standard
+    region: frankfurt
+
+  - type: pserv
+    name: mapfish-print
+    env: docker
+    repo: https://github.com/technologiestiftung/mapfish-print.git
+    plan: starter
+    region: frankfurt
+databases:
+  - name: tinyows
+    databaseName: tinyows
+    plan: starter
+    region: frankfurt

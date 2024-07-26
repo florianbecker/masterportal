@@ -1,0 +1,9 @@
+version: "3.4"
+
+services:
+  masterportal:
+    build: .
+    ports:
+      - 8080:80
+    environment:
+      X_Environment: ${X_Environment}
